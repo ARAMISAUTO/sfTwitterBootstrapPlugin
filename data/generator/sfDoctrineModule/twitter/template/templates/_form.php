@@ -36,16 +36,18 @@
       [?php include_partial('<?php echo $this->getModuleName() ?>/form_fieldset', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset)) ?]
     [?php endforeach; ?]
 
-    [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
+    [?php if (!isset($form_action) || $form_action): ?]
+        [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
+    [?php endif; ?]
 
     <?php if($this->configuration->hasEditPartial() && $this->configuration->hasNewPartial()) : ?>
       </div>
     <?php elseif ($this->configuration->hasNewPartial()) : ?>
-      [?php if ($form->isNew()) : ?]
+      [?php if ($form->isNew() && (!isset($skip_last_div) || !$skip_last_div)) : ?]
       </div>
       [?php endif; ?]
     <?php else : ?>
-      [?php if (!$form->isNew()) : ?]
+      [?php if (!$form->isNew() && (!isset($skip_last_div) || !$skip_last_div)) : ?]
       </div>
       [?php endif; ?]
     <?php endif; ?>
