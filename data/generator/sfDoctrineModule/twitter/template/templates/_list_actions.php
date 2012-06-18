@@ -8,7 +8,7 @@
     <?php else: ?>
 
       <?php
-        $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn');
+        $params['params'] = is_array($params['params']) ? array_merge(array('class' => 'btn'), $params['params']) : array('class' => 'btn');
         if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
         {
           $params['label'] = isset($params['icon']) ? '<i class="'.$params['icon'].'"></i> ' . $params['label'] : $params['label'];
