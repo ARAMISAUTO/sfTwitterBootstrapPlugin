@@ -6,6 +6,9 @@
 <?php foreach ($items as $key => $item): ?>
   <?php if (sfTwitterBootstrap::hasPermission($item, $sf_user)): ?>
     <?php if (($items_in_menu && $item['in_menu']) || (!$items_in_menu && !$item['in_menu'])): ?>
+      <?php if (isset($item['nav-header'])): ?>
+        <li class="nav-header"><?php echo $item['nav-header']; ?></li>
+      <?php endif; ?>
       <li <?php echo $item['in_menu']? 'class="item"':'class="item-menu"'; ?>>
         <a href="<?php echo url_for($item['url']) ?>" title="<?php echo __($item['name']); ?>">
           <?php if (sfTwitterBootstrap::getProperty('resize_mode') == 'thumbnail'): ?>
@@ -16,6 +19,10 @@
           <span><?php echo __($item['name']); ?></span>
         </a>
       </li>
+      <?php if (isset($item['divider']) && $item['divider'] == true): ?>
+        <li class="divider"></li>
+      <?php endif; ?>
     <?php endif; ?>
   <?php endif; ?>
+
 <?php endforeach; ?>

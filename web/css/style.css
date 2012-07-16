@@ -17,8 +17,6 @@
 ----------------------------------------- */
 body { padding-top: 60px; }
 body .breadcrumb { margin-top: -20px;}
-ul li { list-style-type:none;}
-ul { margin:0;}
 
 .footer { text-align:center; border-top:1px solid #DDD;}
 
@@ -84,10 +82,6 @@ form .clearfix.error > div > label {
 
 input.btn-fix-margin {
   margin-bottom: 3px;
-}
-
-input[type="checkbox"] {
-  margin-top: 9px;
 }
 
 input[type="radio"] {
@@ -165,6 +159,14 @@ fieldset.no-legend {
 
 .modal-filters form {
   margin-bottom: 0;
+}
+
+.sf_admin_form_row ul, ul.audit-trail {
+  margin:0;
+}
+
+.sf_admin_form_row ul li, ul.audit-trail li {
+  list-style-type:none;
 }
 
 /* sytling radio_list and checkbox_list */

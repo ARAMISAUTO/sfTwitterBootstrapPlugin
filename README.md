@@ -262,6 +262,26 @@ all:
     breadcrumb_root_name: Home
 ```
 
+#####Configure the menu items#####
+In addition to _Step 5_, you can add "menu division" or "menu header" (see more information http://twitter.github.com/bootstrap/components.html#navbar).
+
+The best way to show how to use this parameters is with an example:
+
+    #in application/config/app.yml
+    all:
+      sf_admin_dash:
+        items:
+          Articles:
+            url:              article
+            image:            book.png
+            credentials:      [[admin, publisher]]
+            divider:          true #menu division
+          Comments:
+            url:              comment
+            image:            textcloud.png
+            credentials:      [admin]
+            nav-header:       Comments #menu header
+
 ## Display custom field in a form
 
 We often need to extends form display in the admin generator to display additional information or a plain text field, etc .. To do that, you need to indicate a partial in generator.yml (like `_member_id`) and use this template to have a nice render :
