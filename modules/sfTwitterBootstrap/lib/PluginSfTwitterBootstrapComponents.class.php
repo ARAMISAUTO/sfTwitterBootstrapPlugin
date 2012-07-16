@@ -28,6 +28,11 @@ class PluginSfTwitterBootstrapComponents extends sfComponents
         $this->module_link = null;
         // but before we do that, one last check - it's possible that the module name is different from the object name and that's the reason we can't sniff it
         foreach (sfTwitterBootstrap::getAllItems() as $name => $item) if ($name == $this->getContext()->getModuleName()) { $this->module_link = $item['url']; break; }
+
+        if (is_null($this->module_link))
+        {
+            $this->module_link = $this->getContext()->getModuleName().'/index';
+        }
       }
 
       $this->module_link_name = sfTwitterBootstrap::getModuleName($this->getContext());
