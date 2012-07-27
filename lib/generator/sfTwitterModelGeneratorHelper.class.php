@@ -23,12 +23,12 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 
   public function linkToEdit($object, $params)
   {
-    return '<li><i class="icon-pencil"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object, $params['params']).'</li>';
+    return '<li>'.link_to('<i class="icon-pencil"></i> '.__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object, $params['params']).'</li>';
   }
 
   public function linkToShow($object, $params)
   {
-    return '<li><i class="icon-zoom-in"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('show'), $object, $params['params']).'</li>';
+    return '<li>'.link_to('<i class="icon-zoom-in"></i> '.__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('show'), $object, $params['params']).'</li>';
   }
 
   public function linkToDelete($object, $params)
@@ -44,7 +44,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
 
-    return '<li><i class="icon-remove"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
+    return '<li>'.link_to('<i class="icon-remove"></i> '.__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
   }
 
   public function linkToDeleteBtn($object, $params)
