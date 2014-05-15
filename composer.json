@@ -1,0 +1,12 @@
+{
+    "name": "aramisauto/sftwitterbootstrapplugin",
+    "authors": [
+        {
+            "name": "Tristan Rivoallan",
+            "email": "tristan@rivoallan.net"
+        }
+    ],
+    "require": {
+
+    }
+}
