@@ -1,6 +1,0 @@
-[submodule "web/bootstrap"]
-	path = web/bootstrap
-	url = git@github.com:twbs/bootstrap.git
-[submodule "web/js/bootbox"]
-	path = web/js/bootbox
-	url = git@github.com:makeusabrew/bootbox.git
